@@ -1,9 +1,10 @@
-package com.nikrob.entity;
+package com.nikrob.model;
 
 /**
  * @author Nik & Rob
  *
  */
+
 public class Student {
 
     private int studentID;
@@ -51,8 +52,6 @@ public class Student {
     public void setStandard(int standard) {
         this.standard = standard;
     }
-
-
 
 }
 
