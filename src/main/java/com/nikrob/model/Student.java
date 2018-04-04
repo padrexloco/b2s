@@ -21,6 +21,11 @@ public class Student {
         this.standard = standard;
     }
 
+
+    public Student(){
+
+    }
+
     public int getStudentID() {
         return studentID;
     }

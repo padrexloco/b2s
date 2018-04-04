@@ -19,9 +19,9 @@ public class StudentService {
      *An instance to access Dao
      */
     @Autowired
-    @Qualifier("fakeData") //since we have more than one class that implement StudentDao interface.
+    @Qualifier("mysql") //since we have more than one class that implement StudentDao interface.
     // to allow spring to know which one to connect with
-    private StudentDao studentDao; //using inteface object that access db or fake data structure.
+    private StudentDao studentDao; //using interface object that access db or fake data structure.
 
     public Collection<Student> getAllStudents() { return this.studentDao.getAllStudents(); }
 

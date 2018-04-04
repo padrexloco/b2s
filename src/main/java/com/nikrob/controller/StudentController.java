@@ -13,10 +13,10 @@ import java.util.Collection;
  * the controller offloads the requests to student services
  */
 @RestController
-@RequestMapping("/students") //a partFor dependency injection => this allows decoupling system: I don't have to say new...
+@RequestMapping("/students") //a part For dependency injection => this allows decoupling system: I don't have to say new...
 public class StudentController {
 
-    @Autowired // find a bean, instanciate and inject it here.
+    @Autowired // find a bean, instantiate and inject it here.
     private StudentService studentService;
 
     @RequestMapping(method = RequestMethod.GET)
