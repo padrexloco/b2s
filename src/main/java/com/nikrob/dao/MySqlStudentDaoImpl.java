@@ -53,16 +53,36 @@ public class MySqlStudentDaoImpl implements StudentDao {
 
     @Override
     public void removeStudentById(int id) {
+        //DELETE FROM table_name
+        //WHERE some_column = some_value
+        final String sql = "DELETE  FROM students WHERE id = ?";
+        jdbcTemplate.update(sql, id); //update is used for everything except GET
 
     }
 
     @Override
     public void updateStudent(Student student) {
+        //UPDATE table_name
+        //SET column1=value, column2=value2,...
+        //WHERE some_column=some_value
+        final int id = student.getStudentID();
+        final String sql = "UPDATE students SET lastName = ?, firstName = ?, standard = ?";
+        final String lastName = student.getLastName();
+        final String firstName = student.getFirstName();
+        final int standard = student.getStandard();
 
+        jdbcTemplate.update(sql, new Object[]{lastName, firstName, standard, id});
     }
 
     @Override
     public void insertStudentToDB(Student student) {
-
+        //INSERT INTO table_name (column1, column2, column3,...)
+        //VALUES (value1, value2, value3,...)
+        final String sql = "INSERT INTO students (lastName, firstName, standard) VALUES (?,?,?)";
+        final int id = student.getStudentID();
+        final String lastName = student.getLastName();
+        final String firstName = student.getFirstName();
+        final int standard = student.getStandard();
+        jdbcTemplate.update(sql, new Object[] {lastName, firstName, standard});
     }
 }
